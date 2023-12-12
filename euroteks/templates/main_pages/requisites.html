@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Реквизиты | Россия | ООО "Евротекс"
+{% endblock %}
+{% block description %}
+Реквизиты и контакты компании.
+{% endblock %}
+{% block content_body %}
+<div class="container px-xl-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="600">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'main_pages:index' %}">Главная</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Реквизиты</li>
+          </ol>
+        </nav>
+  {% comment %} <h2 class="mb-65 small" data-aos-duration="600" data-aos="fade-down" data-aos-delay="600">О компании</h2> {% endcomment %}
+      <p class="text-left" data-aos-duration="600" data-aos="fade-down" data-aos-delay="900">Наименование  предприятия: Общество с ограниченной ответственностью  "Евротекс" <br>
+        Юридический адрес: 123182, г. Москва, ул. Авиационная, д.69 <br>
+        Почтовый адрес: 123182, г. Москва, ул. Авиационная, д.69 <br>
+        Телефон: + 7 (495) 925-81-16 <br>
+        ИНН: 7734659657 <br>
+        КПП: 773401001 <br>
+        Расчетный  счет: 40702810800000017484 <br>
+        Банк: ФИЛИАЛ № 7701 БАНКА ВТБ (ПАО) Г. МОСКВА <br>
+        БИК: 044525745 <br>
+        Кор/счет: 30101810345250000745 <br>
+        ОКПО: 92576179 <br>
+        ОКВЭД: 51.41 <br>
+        ОГРН: 1117746532848 </p>
+</div>
+{% endblock %}

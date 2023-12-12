@@ -1,0 +1,277 @@
+{% extends 'base.html' %}
+{% block title %}
+Наполнители для еврогрунтов конного спорта
+{% endblock %}
+{% block header %}
+ООО "Евротекс" |
+{% endblock %}
+{% block description %}
+ООО "Евротекс" - производитель рубленого геотекстиля для еврогрунтов по низкой цене.
+{% endblock %}
+{% block keywords %}
+еврогрунт, рубленый геотекстиль, грунт для конного манежа, рубленный геотекстиль, эквитекс
+{% endblock %}
+{% block content %}
+{% load static %}
+<div class="container-md">
+  <figure class="text-center"><h1>Рубленый геотекстиль для конного спорта</h1></figure>
+<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="3000">
+      <div class="bg-warning p-2" style="--bs-bg-opacity: .0;">
+      <img src="{% static "img/sl_show_1.JPG" %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-caption d-none d-md-block">
+        <div class="col-md-12 text">
+        <div class="bg-warning p-2" style="--bs-bg-opacity: .05;">
+        <h5 class="text-dark">Всепогодное ипподромное покрытие ЭКВИПОЛИТРЕК™</h5>
+        <p class="text-dark">Всепогодное синтетическое покрытие для конного спорта</p>
+        {% comment %} <a class="btn btn-warning" href='{% url 'main_pages:ekvipoltrek' %}' role="button">Подробнее</a> {% endcomment %}
+        </div>
+      </div>
+  </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Предыдущий</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Следующий</span>
+  </button>
+  <br>
+</div>
+<div class="container px-4 py-1" id="benefits">
+  <h2 class="pb-2 border-bottom">НАШИ ПРЕИМУЩЕСТВА</h2>
+
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+    <div class="col d-flex align-items-start">
+      <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bi bi-gift"/></svg>
+      <div>
+        <h4 class="fw-bold mb-0">Бесплатная консультация</h4>
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bi bi-gear-wide-connected"/></svg>
+      <div>
+        <h4 class="fw-bold mb-0">Современные технологии</h4>
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#tools"/></svg>
+      <div>
+        <h4 class="fw-bold mb-0">Сопровождение после отгрузки</h4>
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bi bi-dropbox"/></svg>
+      <div>
+        <h4 class="fw-bold mb-0">Доставка по всей РФ и СНГ</h4>
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bi bi-percent"/></svg>
+      <div>
+        <h4 class="fw-bold mb-0">Гибкая ценовая политика</h4>
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bi bi-shield-check"/></svg>
+      <div>
+        <h4 class="fw-bold mb-0">Гарантия от производителя</h4>
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bi bi-person-check"/></svg>
+      <div>
+        <h4 class="fw-bold mb-0">Персональный менеджер</h4>
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#speedometer"/></svg>
+      <div>
+        <h4 class="fw-bold mb-0">Оперативный расчет КП</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<h3><p class="text-center">СВЯЗАТЬСЯ С НАМИ</h3>
+  <div class="container text-start">
+    <div class="row justify-content-center">
+      <div class="col-sm-6 col-md-5 col-lg-6">
+        <div class="card text-white bg-dark mb-3" style="max-width: auto;">
+          <div class="card-body" id="contacts">
+            <h4 class="card-title">КОНТАКТЫ</h4>
+            <p class="card-text">123182, Россия,город Москва, улица Авиационная, дом 69, помещение V, офис 5.</p>
+            <h4 class="card-title">РЕЖИМ РАБОТЫ</h4>
+            <p class="card-text">Пн. - Пт.: с 9:00 до 18:00</p>
+            <h4 class="card-title">E-MAIL</h4>
+            <p class="card-text">contact@visteks.net</p>
+            <h4 class="card-title">ТЕЛЕФОН</h4>
+            <p class="card-text">+7(495) 902-67-10</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-5 col-lg-5">
+        <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/org/ao_visteks/1328230558/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">АО Вистекс</a><a href="https://yandex.ru/maps/213/moscow/category/research_organization/184106182/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Научно-производственная организация в Москве</a><iframe src="https://yandex.ru/map-widget/v1/-/CCUZrTXN0D" width="600" height="411" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+        </div>
+      </div>
+    </div>
+{% comment %} <div id='production'><h2 class="pb-2 border-bottom">ПРОДУКЦИЯ</h2></div>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                  <div class="col">
+                    <div class="card h-100">
+                      <img src="{% static "img/Ekvipolitrek.jpg" %}" class="card-img-top" alt="Грунты для конных полей">
+                      <div class="card-body">
+                        <h5 class="card-title">Всепогодное ипподромное покрытие ЭКВИПОЛИТРЕК™</h5>
+                        <p class="card-text">Всепогодное синтетическое покрытие для скаковых дорожек, конкурных и выездковых полей конноспортивных комплексов.</p>
+                      </div>
+                      <div class="card-footer">
+                        <a href="{% url 'main_pages:ekvipoltrek' %}" <small class="btn btn-warning">Подробнее</small></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100">
+                      <img src="{% static "img/ekvigloss.jpeg" %}" class="card-img-top" alt="Покрытие для беговой дорожки ипподрома">
+                      <div class="card-body">
+                        <h5 class="card-title">Всепогодное ипподромное покрытие ЭКВИГЛОСС®</h5>
+                        <p class="card-text">Профессиональное всепогодное покрытие для беговых дорожек ипподромов.</p>
+                      </div>
+                      <div class="card-footer">
+                        <a href="{% url 'main_pages:ekvigloss' %}" <small class="btn btn-warning">Подробнее</small></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100">
+                      <img src="{% static "img/ekvidust_control.jpg" %}" class="card-img-top" alt="Пылеподавление конных полей">
+                      <div class="card-body">
+                        <h5 class="card-title">Обеспыливание конных полей</h5>
+                        <p class="card-text">Воск для минимизации пылеобразования на существующих конноспортивных грунтах, площадках, плацах.</p>
+                      </div>
+                      <div class="card-footer">
+                        <a href="#" <small class="btn btn-warning">Подробнее</small></a>
+                      </div>
+                    </div>
+                  </div>
+                <p><br></p>
+                </div>
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                  <div class="col">
+                    <div class="card h-100">
+                      <img src="{% static "img/ekvipol_m.jpg" %}" class="card-img-top" alt="Пылеподавление грунтовых дорог и угля">
+                      <div class="card-body">
+                        <h5 class="card-title">Пылеподавление угля и грунтов ЭКВИПОЛ®</h5>
+                        <p class="card-text">Эмульсия для пылеподавления на грунтовых дорогах, при добыче полезных ископаемых, на ГОКах, золоотвалах, хвостохранилищах и др.</p>
+                      </div>
+                      <div class="card-footer">
+                        <a href="{% url 'main_pages:ekvipol' %}" <small class="btn btn-warning">Подробнее</small></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100">
+                      <img src="{% static "img/Ekvipol-pro-m.jpeg" %}" class="card-img-top" alt="Гидрофобизация щебня для строительства дорог">
+                      <div class="card-body">
+                        <h5 class="card-title">Гидрофобизация щебня ЭКВИПОЛ-ПРО®</h5>
+                        <p class="card-text">Эмульсия для уменьшения водонасыщения щебня. Для применения при устройстве конструкции дорожной одежды автомобильных и железных дорог.</p>
+                      </div>
+                      <div class="card-footer">
+                        <a href="{% url 'main_pages:ekvipol_pro' %}" <small class="btn btn-warning">Подробнее</small></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100">
+                      <img src="{% static "img/ekvipol-agro-m.jpeg" %}" class="card-img-top" alt="Эмульсия для улучшения всхожести и хранения семян">
+                      <div class="card-body">
+                        <h5 class="card-title">Эмульсия ЭКВИПОЛ-АГРО®</h5>
+                        <p class="card-text">Эмульсия для обработки семян с целью повышения эффективности всхожести.</p>
+                      </div>
+                      <div class="card-footer">
+                        <a href="{% url 'main_pages:ekvipol_agro' %}" <small class="btn btn-warning">Подробнее</small></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100">
+                      <img src="{% static "img/ekviteks-m.jpeg" %}" class="card-img-top" alt="Волокнистый наполнитель для еврогрунтов">
+                      <div class="card-body">
+                        <h5 class="card-title">Рубленый геотекстиль ЭКВИТЕКС®</h5>
+                        <p class="card-text">Волокнистый наполнитель с фиброволокном для песчаных покрытий конных манежей и ипподромов.</p>
+                      </div>
+                      <div class="card-footer">
+                        <a href="{% url 'main_pages:ekviteks' %}" <small class="btn btn-warning">Подробнее</small></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <br></br>
+                  <h3><p class="text-center">НАМ ДОВЕРЯЮТ</h3>
+                    <div class="card mb-3">
+                      <img src="{% static "img/partners.png" %}" class="card-img-top" alt="Заказчики по конным покрытиям и пылеподавлению">  
+                      </div>
+                  </div>
+                </div>                
+                      <br>
+                      <h3><p class="text-center">СВЯЗАТЬСЯ С НАМИ</h3>
+                    <div class="container text-start">
+                      <div class="row justify-content-center">
+                        <div class="col-sm-6 col-md-5 col-lg-6">
+                          <div class="card text-white bg-dark mb-3" style="max-width: auto;">
+                            <div class="card-body" id="contacts">
+                              <h4 class="card-title">КОНТАКТЫ</h4>
+                              <p class="card-text">123182, Россия,город Москва, улица Авиационная, дом 69, помещение V, офис 5.</p>
+                              <h4 class="card-title">РЕЖИМ РАБОТЫ</h4>
+                              <p class="card-text">Пн. - Пт.: с 9:00 до 18:00</p>
+                              <h4 class="card-title">E-MAIL</h4>
+                              <p class="card-text">contact@visteks.net</p>
+                              <h4 class="card-title">ТЕЛЕФОН</h4>
+                              <p class="card-text">+7(495) 902-67-10</p>
+                              <p class="card-text">
+                                <div class="text-start">
+                                  <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                                    <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/>
+                                  </svg> Отправить заявку</button></div>   
+                                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h2 class="modal-title fs-5" id="exampleModalLabel">Оформление заявки</h2>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                      <form id="contactForm" method="POST">
+                                        {% csrf_token %}
+                                        {{ form.name|as_crispy_field }}
+                                        {{ form.phone|as_crispy_field }}
+                                        {{ form.email|as_crispy_field }}
+                                        {{ form.title|as_crispy_field }}
+                                        {{ form.text|as_crispy_field }}
+                                        <p>
+                                        {{ form.captcha }}
+                                        <div id="results"></div> <!-- errors go here -->
+                                        <br>
+                                        <input type="submit" name="contact-submit" class="btn btn-warning" />
+                                        </div></br>
+                                      </form>
+                                    </div>
+                                  </div>
+                                </div>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6 col-md-5 col-lg-5">
+                          <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/org/ao_visteks/1328230558/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">АО Вистекс</a><a href="https://yandex.ru/maps/213/moscow/category/research_organization/184106182/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Научно-производственная организация в Москве</a><iframe src="https://yandex.ru/map-widget/v1/-/CCUZrTXN0D" width="600" height="411" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+                          </div>
+                        </div>
+                      </div> {% endcomment %}
+{% endblock %}

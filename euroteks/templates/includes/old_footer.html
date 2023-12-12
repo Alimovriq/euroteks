@@ -1,0 +1,18 @@
+{% load static %}
+<div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-0 my-0">
+        <p class="col-md-4 mb-0 text-muted">© {{ year }} ООО "Евротекс"</p>
+        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+            <img src="{% static 'img/logo.png' %}" width="160" height="80"><use xlink:href="#euroteks"></use></svg>
+        </a>
+        {% comment %} <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href={% url "main_pages:index" %} class="nav-link px-2 text-muted">Главная</a></li>
+          <li class="nav-item"><a href="/#benefits" class="nav-link px-2 text-muted">Преимущества</a></li>
+          <li class="nav-item"><a href="/#production" class="nav-link px-2 text-muted">Продукция</a></li>
+          <li class="nav-item"><a href="{% url 'gallery:gallery' %}" class="nav-link px-2 text-muted">Фотогалерея</a></li>
+          <li class="nav-item"><a href="{% url "main_pages:about" %}" class="nav-link px-2 text-muted">О компании</a></li>
+          <li class="nav-item"><a href="{% url "main_pages:privacy" %}" class="nav-link px-2 text-muted">Политика конфиденциальности</a></li>
+          <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-bs-original-title="Popover Title"><a href="#">Наверх</button>
+        </ul> {% endcomment %}
+      </footer>
+    </div>

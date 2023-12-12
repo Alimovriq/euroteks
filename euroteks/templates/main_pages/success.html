@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+Заявка успешно отправлена | Россия | ООО "Евротекс"
+{% endblock %}
+{% block description %}
+Сообщение об успешной отправке формы обратной связи
+{% endblock %}
+{% block content_body %}
+<div class="container px-xl-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="600">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'main_pages:index' %}">Главная</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Форма обратной связи</li>
+        </ol>
+        </nav>
+        <p class="text-start">Ваше сообщение успешно отправлено.<br>
+        Специалисты компании ООО "ЕВРОТЕКС" свяжутся с вами 
+        в ближайшее время.</p>
+</div>
+{% endblock %}
