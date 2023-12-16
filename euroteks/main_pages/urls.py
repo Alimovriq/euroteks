@@ -8,6 +8,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('about/', views.about, name='about'),
     path('requisites/', views.requisites, name='requisites'),
+    path('ekviteks/', views.ekviteks, name='ekviteks'),
     path('success/', views.success, name='success'),
     path('feedback/', views.feedback, name='feedback'),
     # path('feedback/', views.FeedbackView.as_view(), name='feedback'),

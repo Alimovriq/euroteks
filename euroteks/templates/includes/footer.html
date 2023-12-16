@@ -43,26 +43,28 @@
     <div class="mt-25 mb-75 hr h-2 bg-gray op-5" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0"></div>
     <div class="row">
         <div class="mb-30 mb-lg-0 col-lg-3 col-sm-6 order-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
-            <a href="#" class="logo link color-main">ООО "ЕВРОТЕКС"</a>
+            <a href="#" class="logo link color-main"> ООО "ЕВРОТЕКС"</a>
         </div>
         <div class="mb-50 mb-sm-0 col-lg-3 col-sm-6 order-2 order-lg-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
             <div class="mb-25 f-14 semibold text-uppercase sp-20 title">Наши контакты</div>
             <div class="color-heading text-adaptive">
                 г. Москва <br /> 
                 ул. Авиационная, дом 69 <br /> 
-                +7 (495) 90-267-10
+                +7 (495) 90-267-10 <br />
             </div>
         </div>
         <div class="col-lg-3 col-sm-6 order-3 order-lg-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="600">
-            <div class="mb-25 f-14 semibold text-uppercase sp-20 title">Try Startup for Free</div>
+            <div class="mb-25 f-14 semibold text-uppercase sp-20 title">Тест</div>
             <div class="color-heading text-adaptive">
-                Start a 14 Day Free Trial <br /> 
-                on any of our paid plans. <br /> 
-                No credit card required.
+                текст текст текст<br /> 
+                текст текст текст <br /> 
+                текст текст текст.
             </div>
         </div>
-        <div class="mb-50 mb-lg-0 col-lg-3 col-sm-6 text-lg-right order-1 order-lg-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="900">
+        {% if not feedback_button_footer_off %}
+        <div class="mb-50 mb-lg-0 col-lg-3 col-sm-6 text-lg-left order-1 order-lg-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="900">
             <a href="{% url 'main_pages:feedback' %}" class="btn action-2">Связаться</a>
         </div>
+        {% endif %}
     </div>
 </div>

@@ -1,7 +1,4 @@
-from django.http import HttpResponseRedirect
-from django.urls import reverse
 from django.shortcuts import redirect, render
-from django.views.generic.edit import CreateView
 
 from .forms import FeedbackForm
 
@@ -36,6 +33,17 @@ def requisites(request):
     return render(request, template)
 
 
+def ekviteks(request):
+    """
+    Представление страницы с описанием
+    рубленного геотекстиля "ЭКВИТЕКС".
+    """
+
+    template = 'main_pages/ekviteks.html'
+
+    return render(request, template)
+
+
 def success(request):
     """
     Представление страницы с сообщением
@@ -51,24 +59,17 @@ def success(request):
 def feedback(request):
     template = 'main_pages/feedback.html'
     form = FeedbackForm()
+    feedback_button_footer_off = True
     if request.method == 'POST':
         form = FeedbackForm(request.POST)
         if form.is_valid():
-            print('lol')
             form.save()
             return redirect('main_pages:success')
-            # return HttpResponseRedirect('/success/')
+
     else:
         form = FeedbackForm()
-    print('loooooooool')
 
-    return render(request, template, {'form': form})
+    return render(request, template, {
+        'form': form,
+        'feedback_button_footer_off': feedback_button_footer_off})
 
-# class FeedbackView(CreateView):
-#     """
-#     Представление страницы с формой обратной связи.
-#     """
-
-#     form_class = FeedbackForm
-#     template_name = 'main_pages/feedback.html'
-#     success_url = '127.0.0.1:8000'

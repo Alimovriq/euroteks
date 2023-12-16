@@ -14,8 +14,8 @@ class Feedback(models.Model):
         max_length=20,
         help_text='Введите фамилию')
     text = models.TextField(
-        'Текст', max_length=500,
-        help_text='Введите текст')
+        'Сообщение', max_length=500,
+        help_text='Введите сообщение')
     telephone = models.IntegerField(
         'Телефон',
         help_text='Введите номер телефона')

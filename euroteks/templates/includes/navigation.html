@@ -1,10 +1,10 @@
 <div class="container px-xl-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
     <a href="{% url 'main_pages:index' %}" class="link color-main mr-15">Главная</a>
-    <a href="#" class="link color-main mx-15">Преимущества</a>
+    <a href="{% url 'main_pages:ekviteks' %}" class="link color-main mx-15">Эквитекс</a>
     <a href="{% url 'main_pages:about' %}" class="link color-main mx-15">О компании</a>
     <a href="{% url 'main_pages:requisites' %}" class="link color-main mx-15">Реквизиты</a>
-    <div class="d-inline-block">
+    {% comment %} <div class="d-inline-block">
         <a href="#" class="link color-main mx-15"><i class="fab fa-product-hunt f-18"></i></a>
         <a href="#" class="link color-main ml-15"><i class="fab fa-apple f-18"></i></a>
-    </div>
+    </div> {% endcomment %}
 </div>
