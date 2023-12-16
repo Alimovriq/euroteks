@@ -7,18 +7,6 @@
 {% endblock %}
 {% block content_body %}
 {% load user_filters %}
-{% comment %} <div class="container px-xl-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="600">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'main_pages:index' %}">Главная</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Форма обратной связи</li>
-        </ol>
-        </nav>
-        <form method="post" action="{% url 'main_pages:feedback' %}">
-            {{ form.as_p }}
-            <input type="submit" value="Отправить">
-          </form> 
-</div> {% endcomment %}
 <div class="container py-5">
     <div class="row justify-content-center">
       <div class="col-md-8 p-5">
@@ -40,8 +28,8 @@
                 {{ error|escape }}
               </div>
             {% endfor %}
-        {% endif %}
-        <form method="post" enctype="multipart/form-data">
+            {% endif %}
+        <form id="feedback-form" method="POST" enctype="multipart/form-data" action="{% url 'main_pages:success' %}">
           {% csrf_token %}
           {% for field in form %} 
           <div class="form-group row my-3">
@@ -70,5 +58,33 @@
       </form>
     </div>
   </div>
+
+  <script>
+    document.getElementById("feedback-form").addEventListener("submit", function(event) {
+      event.preventDefault();  // Отменить отправку формы по умолчанию
   
+      // Создание объекта FormData и добавление данных из формы
+      var formData = new FormData();
+      formData.append("name", document.getElementById("id_name").value);
+      formData.append("surname", document.getElementById("id_surname").value);
+      formData.append("text", document.getElementById("id_text").value);
+      formData.append("telephone", document.getElementById("id_telephone").value);
+      formData.append("email", document.getElementById("id_email").value);
+  
+      // Отправка данных формы с использованием AJAX
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "{% url 'main_pages:feedback' %}");
+      xhr.setRequestHeader("X-CSRFToken", "{{ csrf_token }}");
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          // Перенаправление пользователя на страницу успеха
+          window.location.href = "{% url 'main_pages:success' %}";
+        } else {
+          // Обработка ошибок, если не удалось сохранить данные
+        }
+      };
+      xhr.send(formData);
+    });
+  </script>
 {% endblock %}
+

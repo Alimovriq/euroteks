@@ -390,7 +390,7 @@
 </section> {% endcomment %}
 <!-- Ecommerce 29 -->
 
-<section class="ecommerce_29 bg-light pt-85 pb-85 text-center">
+{% comment %} <section class="ecommerce_29 bg-light pt-85 pb-85 text-center">
 	<div class="container px-xl-0">
 		<div class="row align-items-stretch justify-content-center justify-content-md-between">
 			<div class="col-xl-4 col-lg-6 d-flex" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
@@ -434,9 +434,9 @@
 		</div>
 	</div>
 </section>
+ {% endcomment %}
 
-
-<!-- forms alerts -->
+{% comment %} <!-- forms alerts -->
 <div class="alert alert-success alert-dismissible alert-form-success" role="alert">
 	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	Thanks for your message!
@@ -457,5 +457,5 @@
 		<img srcset="i/close_white@2x.png 2x" src="{% static 'i/close_white.png' %}" alt="" />
 	</a>
 	<div class="d-flex align-items-center justify-content-center w-full h-full iframe_container"></div>
-</div>
+</div> {% endcomment %}
 {% endblock %}
