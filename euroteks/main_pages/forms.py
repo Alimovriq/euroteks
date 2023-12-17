@@ -20,7 +20,4 @@ class FeedbackForm(forms.ModelForm):
         # labels = {'name': 'Имя', 'surname': 'Фамилия',
         #           'text': 'Сообщение', 'telephone': 'Телефон',
         #           'email': 'Email'}
-        # help_texts = {
-        #             'name': 'Имя', 'surname': 'Фамилия',
-        #             'text': 'Сообщение', 'telephone': 'Телефон',
-        #             'email': 'Email'}
+        help_texts = {'telephone': 'Введите номер телефона. Формат: +79681231231'}

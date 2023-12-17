@@ -1,4 +1,5 @@
 from django.db import models
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 class Feedback(models.Model):
@@ -16,7 +17,10 @@ class Feedback(models.Model):
     text = models.TextField(
         'Сообщение', max_length=500,
         help_text='Введите сообщение')
-    telephone = models.IntegerField(
+    # telephone = models.IntegerField(
+    #     'Телефон',
+    #     help_text='Введите номер телефона')
+    telephone = PhoneNumberField(
         'Телефон',
         help_text='Введите номер телефона')
     email = models.EmailField(

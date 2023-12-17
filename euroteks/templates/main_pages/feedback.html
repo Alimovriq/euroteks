@@ -7,13 +7,22 @@
 {% endblock %}
 {% block content_body %}
 {% load user_filters %}
-<div class="container py-5">
+<div class="container">
+  <div class="container xl-lg-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="600">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'main_pages:index' %}">Главная</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Форма обратной связи</li>
+        </ol>
+      </nav>
+    </div>
+{% comment %} <div class="container py-5"> {% endcomment %}
     <div class="row justify-content-center">
       <div class="col-md-8 p-5">
-        <div class="card">
-          <div class="card-header">       
+        <div class="card" data-aos-duration="600" data-aos="fade-down" data-aos-delay="900">
+          {% comment %} <div class="card-header">       
             Форма обратной связи
-          </div>
+          </div>  {% endcomment %}
           <div class="card-body">
             {% if form.errors %}
             {% for field in form %} 
@@ -51,13 +60,16 @@
           </div>
           {% endfor %}
         <div class="d-flex justify-content-end">
-          <button type="submit" class="mt-15 btn sm action-2 f-16">
+          <button type="submit" class="mt-15 btn sm action-2 f-16" data-aos-duration="600" data-aos="fade-down" data-aos-delay="1000">
             Отправить
           </button>
         </div>
       </form>
     </div>
   </div>
+</div>
+</div>
+</div>
 
   <script>
     document.getElementById("feedback-form").addEventListener("submit", function(event) {
