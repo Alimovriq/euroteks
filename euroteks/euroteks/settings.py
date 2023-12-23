@@ -26,6 +26,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'phonenumber_field',
+    'crispy_forms',
+    'crispy_bootstrap4',
+    'django_recaptcha',
 ]
 
 MIDDLEWARE = [
@@ -85,6 +88,10 @@ DATABASES = {
 }
 """
 
+RECAPTCHA_PUBLIC_KEY = '6LfofzUpAAAAAOlRQ1fjqpcVN77hpmDOtyMamcjh'
+RECAPTCHA_PRIVATE_KEY = '6LfofzUpAAAAABhFgGFlHUezMpW99yPbBwLPxajT'
+SILENCED_SYSTEM_CHECKS = ['django_recaptcha.recaptcha_test_key_error']
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -123,6 +130,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = '/home/e/euroteks/django_1/public_html/euroteks/staticfiles/'
 """
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap4'
 
 # Default primary key field type
 

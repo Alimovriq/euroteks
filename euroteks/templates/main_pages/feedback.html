@@ -6,24 +6,69 @@
 Оставить заявку на рубленный геотекстиль
 {% endblock %}
 {% block content_body %}
+{% load crispy_forms_tags %}
 {% load user_filters %}
-<div class="container">
-  <div class="container xl-lg-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="600">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{% url 'main_pages:index' %}">Главная</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Форма обратной связи</li>
-        </ol>
-      </nav>
-    </div>
+      <div class="container">
+        <div class="container xl-lg-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="600">
+          <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'main_pages:index' %}">Главная</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Форма обратной связи</li>
+              </ol>
+            </nav>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-8 p-5">
+              <div class="card" data-aos-duration="600" data-aos="fade-down" data-aos-delay="900">
+                <div class="card-body">
+                  {% if form.errors %}
+                  {% for field in form %} 
+                    {% for error in field.errors %}  
+                      {% if field.name == 'captcha' %}
+                      <span class="badge badge-pill badge-danger">
+                        Необходимо пройти проверку с помощью капчи
+                      </span><br>
+                      {% else %}
+                      <span class="badge badge-pill badge-danger">
+                        {{ error|escape }}
+                      </span><br>
+                    {% endif %}
+                    {% endfor %}
+                  {% endfor %}
+                  {% for error in form.non_field_errors %}
+                  <span class="badge badge-pill badge-danger">
+                    {{ error|escape }}
+                  </span><br>
+                  {% endfor %}
+                  {% endif %}
+                <form method="POST">
+                    {% csrf_token %}
+                    {% for field in form %}
+                      {% if field.name != 'captcha' %}
+                        {{ field|as_crispy_field }}
+                      {% else %}
+                        {{ form.captcha|safe }}
+                      {% endif %}
+                    {% endfor %}
+                <div class="d-flex justify-content-end">
+                  <button type="submit" class="mt-0 btn action-2 f-16" data-aos-duration="600" data-aos="fade-down" data-aos-delay="1000">
+                    Отправить
+                  </button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
 {% comment %} <div class="container py-5"> {% endcomment %}
-    <div class="row justify-content-center">
+    {% comment %} <div class="row justify-content-center">
       <div class="col-md-8 p-5">
-        <div class="card" data-aos-duration="600" data-aos="fade-down" data-aos-delay="900">
+        <div class="card" data-aos-duration="600" data-aos="fade-down" data-aos-delay="900"> {% endcomment %}
           {% comment %} <div class="card-header">       
             Форма обратной связи
           </div>  {% endcomment %}
-          <div class="card-body">
+          {% comment %} <div class="card-body">
             {% if form.errors %}
             {% for field in form %} 
               {% for error in field.errors %}            
@@ -38,9 +83,10 @@
               </div>
             {% endfor %}
             {% endif %}
-        <form id="feedback-form" method="POST" enctype="multipart/form-data" action="{% url 'main_pages:success' %}">
+        <form id="feedback-form" method="post" enctype="multipart/form-data" action="{% url 'main_pages:feedback' %}">
           {% csrf_token %}
-          {% for field in form %} 
+          {% for field in form %}
+            {% if field.name != 'captcha'%} 
           <div class="form-group row my-3">
             <label for="{{ field.id_for_label }}">
               {{ field.label }}
@@ -48,7 +94,7 @@
                   <span class="required text-danger">*</span>
                 {% endif %}
             </label>
-            {{ field|addclass:'form-control' }} 
+            {{ field|addclass:'form-control' }}
               {% if field.help_text %}
                 <small 
                    id="{{ field.id_for_label }}-help"
@@ -58,7 +104,9 @@
                 </small>
               {% endif %}
           </div>
+          {% endif %}
           {% endfor %}
+          {{ form.captcha|safe }}
         <div class="d-flex justify-content-end">
           <button type="submit" class="mt-15 btn sm action-2 f-16" data-aos-duration="600" data-aos="fade-down" data-aos-delay="1000">
             Отправить
@@ -68,10 +116,9 @@
     </div>
   </div>
 </div>
-</div>
-</div>
-
-  <script>
+</div> {% endcomment %}
+{% comment %} </div> {% endcomment %}
+  {% comment %} <script>
     document.getElementById("feedback-form").addEventListener("submit", function(event) {
       event.preventDefault();  // Отменить отправку формы по умолчанию
   
@@ -82,6 +129,7 @@
       formData.append("text", document.getElementById("id_text").value);
       formData.append("telephone", document.getElementById("id_telephone").value);
       formData.append("email", document.getElementById("id_email").value);
+      formData.append("captcha", document.getElementById("id_captcha").value);
   
       // Отправка данных формы с использованием AJAX
       var xhr = new XMLHttpRequest();
@@ -97,6 +145,6 @@
       };
       xhr.send(formData);
     });
-  </script>
+  </script> {% endcomment %}
 {% endblock %}
 

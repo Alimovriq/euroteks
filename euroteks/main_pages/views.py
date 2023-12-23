@@ -60,16 +60,22 @@ def feedback(request):
     template = 'main_pages/feedback.html'
     form = FeedbackForm()
     feedback_button_footer_off = True
+    messages = {}
     if request.method == 'POST':
         form = FeedbackForm(request.POST)
+        # print(form)
         if form.is_valid():
             form.save()
             return redirect('main_pages:success')
-
+        # else:
+            # dict_errs = form.errors
+            # for key, _ in dict_errs.items():
+            #     if key == 'captcha':
+            #         messages[key] = '<ul class="errorlist"><li>КАПЧА.</li></ul>'
     else:
         form = FeedbackForm()
 
     return render(request, template, {
         'form': form,
-        'feedback_button_footer_off': feedback_button_footer_off})
-
+        'feedback_button_footer_off': feedback_button_footer_off,
+        'messages': messages})
