@@ -82,7 +82,7 @@ def feedback(request):
             subject = f'Заявка №{obj.pk} от {obj.pub_date}'
             message = f'Дата: {obj.pub_date}\nФИО: {obj.name} {obj.surname}\nСообщение: {obj.text}\nКонтакты: {obj.telephone} {obj.email}'
             try:
-                send_mail(subject, message, DEFAULT_FROM_EMAIL, ['contact@euroteks-django-7on6d.tw1.ru'])
+                send_mail(subject, message, DEFAULT_FROM_EMAIL, [DEFAULT_FROM_EMAIL])
             except BadHeaderError:
                 return HttpResponse('Ошибка в отправке формы.')
             return redirect('main_pages:success')

@@ -88,8 +88,8 @@ DATABASES = {
 }
 """
 
-RECAPTCHA_PUBLIC_KEY = '6LfofzUpAAAAAOlRQ1fjqpcVN77hpmDOtyMamcjh'
-RECAPTCHA_PRIVATE_KEY = '6LfofzUpAAAAABhFgGFlHUezMpW99yPbBwLPxajT'
+RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_PUBLIC_KEY')
+RECAPTCHA_PRIVATE_KEY = os.getenv('RECAPTCHA_PRIVATE_KEY')
 SILENCED_SYSTEM_CHECKS = ['django_recaptcha.recaptcha_test_key_error']
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -118,16 +118,15 @@ USE_L10N = True
 
 USE_TZ = True
 
-# #  подключаем движок filebased.EmailBackend
 # EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.timeweb.ru'
-EMAIL_PORT = '465'
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_PORT = os.getenv('EMAIL_PORT')
 EMAIL_USE_SSL = True
-EMAIL_HOST_USER = 'contact@euroteks-django-7on6d.tw1.ru'
-EMAIL_HOST_PASSWORD = '$Vkj6rb6'
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-# # указываем директорию, в которую будут складываться файлы писем
+
 # EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
 
 # Static files (CSS, JavaScript, Images)
