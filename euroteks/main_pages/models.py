@@ -34,3 +34,6 @@ class Feedback(models.Model):
     class Meta:
         verbose_name = 'Заявка'
         verbose_name_plural = 'Заявки'
+
+    def __str__(self) -> str:
+        return f'Заявка №{self.pk}'

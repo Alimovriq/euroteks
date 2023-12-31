@@ -118,6 +118,17 @@ USE_L10N = True
 
 USE_TZ = True
 
+# #  подключаем движок filebased.EmailBackend
+# EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.timeweb.ru'
+EMAIL_PORT = '465'
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'contact@euroteks-django-7on6d.tw1.ru'
+EMAIL_HOST_PASSWORD = '$Vkj6rb6'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# # указываем директорию, в которую будут складываться файлы писем
+# EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
 
 # Static files (CSS, JavaScript, Images)
 

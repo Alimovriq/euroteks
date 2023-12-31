@@ -1,4 +1,10 @@
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
+from django.core.mail import BadHeaderError, send_mail
+
+from main_pages.models import Feedback
+
+from euroteks.settings import DEFAULT_FROM_EMAIL
 
 from .forms import FeedbackForm
 
@@ -57,25 +63,32 @@ def success(request):
 
 
 def feedback(request):
+    """"
+    Представление для формы обратеной связи.
+    При POST запросе сохраняется экземпляр класса,
+    далее отправляется электронное письмо, в обратном
+    случае возвращается ошибка, при успешном отправлении
+    пользователь перенаправляется на страницу успеха.
+    """
+
     template = 'main_pages/feedback.html'
     form = FeedbackForm()
     feedback_button_footer_off = True
-    messages = {}
     if request.method == 'POST':
         form = FeedbackForm(request.POST)
-        # print(form)
         if form.is_valid():
             form.save()
+            obj = Feedback.objects.all().order_by('-pub_date').first()
+            subject = f'Заявка №{obj.pk} от {obj.pub_date}'
+            message = f'Дата: {obj.pub_date}\nФИО: {obj.name} {obj.surname}\nСообщение: {obj.text}\nКонтакты: {obj.telephone} {obj.email}'
+            try:
+                send_mail(subject, message, DEFAULT_FROM_EMAIL, ['contact@euroteks-django-7on6d.tw1.ru'])
+            except BadHeaderError:
+                return HttpResponse('Ошибка в отправке формы.')
             return redirect('main_pages:success')
-        # else:
-            # dict_errs = form.errors
-            # for key, _ in dict_errs.items():
-            #     if key == 'captcha':
-            #         messages[key] = '<ul class="errorlist"><li>КАПЧА.</li></ul>'
     else:
         form = FeedbackForm()
 
     return render(request, template, {
         'form': form,
-        'feedback_button_footer_off': feedback_button_footer_off,
-        'messages': messages})
+        'feedback_button_footer_off': feedback_button_footer_off})
