@@ -1,65 +1,24 @@
 {% load static %}
 <div class="container px-xl-0">
-    {% comment %} <div class="row">
-        <div class="mb-50 col-lg-2 col-md-3 col-6 links" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
-            <div class="mb-30 f-18 medium title">О нас</div>
-            <div><a href="#" class="mb-20 link color-main">Описание компании</a></div>
-            <div><a href="#" class="mb-20 link color-main">Преимущества</a></div>
-            <div><a href="#" class="mb-20 link color-main">Integrations</a></div>
-            <div><a href="#" class="mb-20 link color-main">Team</a></div>
-        </div>
-        <div class="mb-50 col-lg-2 col-md-3 col-6 links" data-aos-duration="600" data-aos="fade-down" data-aos-delay="150">
-            <div class="mb-30 f-18 medium title">Help</div>
-            <div><a href="#" class="mb-20 link color-main">Support</a></div>
-            <div><a href="#" class="mb-20 link color-main">Help Center</a></div>
-            <div><a href="#" class="mb-20 link color-main">Contact Us</a></div>
-        </div>
-        <div class="mb-50 col-lg-2 col-md-3 col-6 links" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
-            <div class="mb-30 f-18 medium title">Resources</div>
-            <div><a href="#" class="mb-20 link color-main">Ebooks</a></div>
-            <div><a href="#" class="mb-20 link color-main">Infographics</a></div>
-            <div><a href="#" class="mb-20 link color-main">Tools</a></div>
-            <div><a href="#" class="mb-20 link color-main">Videos</a></div>
-            <div><a href="#" class="mb-20 link color-main">Podcasts</a></div>
-        </div>
-        <div class="mb-50 col-lg-2 col-md-3 col-6 links" data-aos-duration="600" data-aos="fade-down" data-aos-delay="450">
-            <div class="mb-30 f-18 medium title">Commercial</div>
-            <div><a href="#" class="mb-20 link color-main">Why Lander</a></div>
-            <div><a href="#" class="mb-20 link color-main">Pricing</a></div>
-            <div><a href="#" class="mb-20 link color-main">Custom Template</a></div>
-        </div>
-        
-        <div class="col-lg-2"></div>
-        
-        <div class="mb-50 col-lg-2 col-md-4" data-aos-duration="600" data-aos="fade-down" data-aos-delay="600">
-            <div class="socials">
-                <div class="mb-30 f-18 medium title">Stay Tuned</div>
-                <a href="#" class="f-18 link color-main mr-15"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="f-18 link color-main mx-15"><i class="fab fa-facebook-square"></i></a>
-                <a href="#" class="f-18 link color-main ml-15"><i class="fab fa-google-plus-g"></i></a>
-            </div>
-        </div>
-    </div> {% endcomment %}
     <div class="mt-25 mb-75 hr h-2 bg-gray op-5" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0"></div>
     <div class="row">
         <div class="mb-30 mb-lg-0 col-lg-3 col-sm-6 order-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
             <a href="{% url 'main_pages:index' %}"><img src="{% static 'images/evroteks_logo_3.png' %}" class="img-fluid" alt="Евротекс"></a>
-            {% comment %} <a href="#" class="logo link color-main"> ООО "ЕВРОТЕКС"</a> {% endcomment %}
         </div>
         <div class="mb-50 mb-sm-0 col-lg-3 col-sm-6 order-2 order-lg-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
             <div class="mb-25 f-14 semibold text-uppercase sp-20 title">Наши контакты</div>
             <div class="color-heading text-adaptive">
-                г. Москва <br /> 
-                ул. Авиационная, дом 69 <br /> 
+                Москва, Авиационная, 69<br /> 
+                contact@euroteks-django-7on6d.tw1.ru <br /> 
                 +7 (495) 90-267-10 <br />
             </div>
         </div>
         <div class="col-lg-3 col-sm-6 order-3 order-lg-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="600">
-            <div class="mb-25 f-14 semibold text-uppercase sp-20 title">Тест</div>
+            <div class="mb-25 f-14 semibold text-uppercase sp-20 title">Доставка</div>
             <div class="color-heading text-adaptive">
-                текст текст текст<br /> 
-                текст текст текст <br /> 
-                текст текст текст.
+                Отправляем грузы<br /> 
+                по всей территории <br /> 
+                Российской Федерации
             </div>
         </div>
         {% if not feedback_button_footer_off %}
