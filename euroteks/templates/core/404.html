@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+				<link rel="icon" href="{% static 'i/favicon.png' %}" type="image/x-icon">
+		<!-- Google Fonts -->
+				<link href="https://fonts.googleapis.com/css?family=Hind:100,200,300,400,600,500,700,800,900|Open+Sans:100,200,300,400,500,600,700,800,900&amp;subset=latin" rel="stylesheet">
+				<!-- Bootstrap 4.3.1 CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<!-- Slick 1.8.1 jQuery plugin CSS (Sliders) -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+		<!-- Fancybox 3 jQuery plugin CSS (Open images and video in popup) -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+		<!-- AOS 2.3.1 jQuery plugin CSS (Animations) -->
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<!-- FontAwesome CSS -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		<!-- Startup 3 CSS (Styles for all blocks) -->
+					<link href="{% static 'css/style.css' %}" rel="stylesheet" />
+				<!-- jQuery 3.3.1 -->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>Ошибка № 404 - Страница не существует</title>
+<header class="bg-dark pt-155 pb-170 header_20">
+	<div class="container px-xl-0 color-white">
+		<div class="row justify-content-center">
+			<div class="col-lg-10">
+				<div class="row justify-content-center justify-content-sm-between align-items-center text-center text-sm-left">
+					<div class="col-xl-1"></div>
+					<div class="col-xl-5 col-sm-4 col-4" data-aos-duration="600" data-aos="fade-down" data-aos-delay="1200">
+						<img srcset="images/ekviteks.png 2x" src="{% static 'images/404.webp' %}" class="img-fluid img" alt="" />
+					</div>
+					<div class="col-xl-6 col-sm-7">
+						<div class="logo color-white" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">Ой! Страница с адресом {{ path }} не найдена</h4</div>
+						<h1 class="mt-40 big" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">#404</h1>
+						<div class="row" data-aos-duration="600" data-aos="fade-down" data-aos-delay="600">
+							<div class="col-lg-10 mt-30 mb-35 f-22 op-7 text-adaptive">
+								Страница, которую Вы ищете не найдена. Возможно она была удалена или действует по другому адресу.</div>
+						</div>
+						<span data-aos-duration="600" data-aos="fade-down" data-aos-delay="900"><a href="{% url 'main_pages:index' %}" class="btn lg action-2">На главную страницу</a></span>						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+    
+<!-- Bootstrap 4.3.1 JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<!-- AOS 2.3.1 jQuery plugin JS (Animations) -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- Maskedinput jQuery plugin JS (Masks for input fields) -->
+<script src="{% static 'js/jquery.maskedinput.min.js' %}"></script>
+<!-- Startup 3 JS (Custom js for all blocks) -->
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
