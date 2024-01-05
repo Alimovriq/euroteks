@@ -43,7 +43,8 @@
     <div class="mt-25 mb-75 hr h-2 bg-gray op-5" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0"></div>
     <div class="row">
         <div class="mb-30 mb-lg-0 col-lg-3 col-sm-6 order-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
-            <a href="#" class="logo link color-main"> ООО "ЕВРОТЕКС"</a>
+            <a href="{% url 'main_pages:index' %}"><img src="{% static 'images/evroteks_logo_3.png' %}" class="img-fluid" alt="Евротекс"></a>
+            {% comment %} <a href="#" class="logo link color-main"> ООО "ЕВРОТЕКС"</a> {% endcomment %}
         </div>
         <div class="mb-50 mb-sm-0 col-lg-3 col-sm-6 order-2 order-lg-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
             <div class="mb-25 f-14 semibold text-uppercase sp-20 title">Наши контакты</div>
