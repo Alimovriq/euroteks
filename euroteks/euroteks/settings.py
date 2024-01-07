@@ -130,7 +130,7 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 # EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
 
 # Static files (CSS, JavaScript, Images)
-
+#STATIC_ROOT = '/home/f/fr42324/django_0bqiy/public_html/static/'
 STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
