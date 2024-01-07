@@ -4,8 +4,12 @@
 	<head>
 		<meta charset="utf-8" >
 		<title>{% block title %}{% endblock %}</title>
+		{% block noindex %}{% endblock %}
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 				<link rel="icon" href="{% static 'i/favicon.png' %}" type="image/x-icon">
+		<meta name="description" content="{% block description %} {% endblock %}">
+		<meta name="keywords" content="{% block keywords %} {% endblock %}">
+		<link rel="canonical" href="{{ request.path }}">		
 		<!-- Google Fonts -->
 				<link href="https://fonts.googleapis.com/css?family=Hind:100,200,300,400,600,500,700,800,900|Open+Sans:100,200,300,400,500,600,700,800,900&amp;subset=latin" rel="stylesheet">
 				<!-- Bootstrap 4.3.1 CSS -->
@@ -13,8 +17,8 @@
 		<!-- Slick 1.8.1 jQuery plugin CSS (Sliders) -->
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
-		<!-- Fancybox 3 jQuery plugin CSS (Open images and video in popup) -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+		{% comment %} <!-- Fancybox 3 jQuery plugin CSS (Open images and video in popup) -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" /> {% endcomment %}
 		<!-- AOS 2.3.1 jQuery plugin CSS (Animations) -->
 		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 		<!-- FontAwesome CSS -->
