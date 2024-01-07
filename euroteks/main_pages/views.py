@@ -58,8 +58,10 @@ def success(request):
     """
 
     template = 'main_pages/success.html'
-
-    return render(request, template)
+    if request.session.get('feedback_submitted'):
+        del request.session['feedback_submitted']
+        return render(request, template)
+    return redirect('main_pages:index')
 
 
 def feedback(request):
@@ -85,6 +87,7 @@ def feedback(request):
                 send_mail(subject, message, DEFAULT_FROM_EMAIL, [DEFAULT_FROM_EMAIL])
             except BadHeaderError:
                 return HttpResponse('Ошибка в отправке формы.')
+            request.session['feedback_submitted'] = True
             return redirect('main_pages:success')
     else:
         form = FeedbackForm()
